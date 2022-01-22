@@ -3,7 +3,7 @@
 
 <div class="table-responsive">
 <h3 style="text-align:center"><strong>URL</strong> : {{url}} </h3> 
-<table class="table table-bordered table-striped text-center" >
+<table class="table table-bordered table-striped" >
   <thead class="thead-dark ">
     <tr>
       <th scope="col">TRACEROUTE</th>
@@ -13,13 +13,14 @@
       
       {% if result %}
       
-      <tr> 
-      {% for trace in result %> 
-          <td>{{ trace  }}</td>
+        <tr> 
+	      {% for trace in result %} 
+                  <td>{{ trace  }}</td>
        </tr>
       {% endfor %} 
 
-      {% else %>
+      {% else %}
+      
       <tr> 
 	      <td>NO Trace to given found</td>
       </tr>
