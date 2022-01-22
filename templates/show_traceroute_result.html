@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+{% block content %}
+
+<div class="table-responsive">
+<h3 style="text-align:center"><strong>URL</strong> : {{url}} </h3> 
+<table class="table table-bordered table-striped text-center" >
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">TRACEROUTE</th>
+    </tr>
+  </thead>
+  <tbody>
+      
+      {% if result %}
+      
+      <tr> 
+      {% for trace in result %> 
+          <td>{{ trace  }}</td>
+       </tr>
+      {% endfor %} 
+
+      {% else %>
+      <tr> 
+	      <td>NO Trace to given found</td>
+      </tr>
+      {% endif  %}
+  
+
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}
