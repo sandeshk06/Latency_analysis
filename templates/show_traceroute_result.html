@@ -1,35 +1,96 @@
 {% extends 'home.html' %}
 {% block content %}
+<!-- Traceroute -->
 
-<div class="table-responsive">
 <h3 style="text-align:center"><strong>URL</strong> : {{url}} </h3> 
+
+<div class="container-fluid pd-3">
+<div class="row">
+
+<div class="col-sm-4">	
+<div class="table-responsive">
 <table class="table table-bordered table-striped" >
   <thead class="thead-dark ">
-    <tr>
       <th scope="col">TRACEROUTE</th>
-    </tr>
   </thead>
-  <tbody>
-      
-      {% if result %}
-      
-        <tr> 
-	      {% for trace in result %} 
-                  <td>{{ trace  }}</td>
-       </tr>
-      {% endfor %} 
+  <tbody class="scroller">
+      		
+	  {% if traceroute_result %}
+	        {% for trace in traceroute_result %}
+	           <tr> 
+                              <td>{{ trace  }}</td>
+                   </tr>
+                 {% endfor %} 
 
-      {% else %}
+          {% else %}
       
-      <tr> 
-	      <td>NO Trace to given found</td>
-      </tr>
-      {% endif  %}
-  
+             <tr> 
+	         <td>NO Trace to given found</td>
+             </tr>
+          {% endif  %}
 
   </tbody>
 </table>
 </div>
+</div>
 
+<!-- MTR -->
+
+
+<div class="col-sm-4">	
+<div class="table-responsive">
+<table class="table table-bordered table-striped" >
+  <thead class="thead-dark ">
+      <th scope="col">MTR</th>
+  </thead>
+  <tbody class="scroller">
+                        {% if mtr_result %}
+                           {% for trace in mtr_result %}
+			   <tr>
+                              <td>{{ trace  }}</td>
+			   </tr>   
+                           {% endfor %}
+
+                         {% else %}
+
+                        <tr>
+                               <td>NO Trace to given found</td>
+                        </tr>
+                         {% endif  %}
+
+  </tbody>
+</table>
+</div>
+</div>
+<!-- Ping -->
+
+<div class="col-sm-4">	
+<div class="table-responsive">
+<table class="table table-bordered table-striped" >
+  <thead class="thead-dark ">
+      <th scope="col">PING</th>
+  </thead>
+  <tbody class="scroller">
+                        {% if ping_result %}
+                           {% for trace in ping_result %}
+			    <tr>
+                              <td>{{ trace  }}</td>
+                            </tr>
+                           {% endfor %}
+
+                         {% else %}
+
+                        <tr>
+                               <td>Unable to ping given URL</td>
+                        </tr>
+                         {% endif  %}
+
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
 
 {% endblock %}

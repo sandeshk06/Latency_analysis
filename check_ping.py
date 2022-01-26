@@ -1,11 +1,11 @@
 #!/opt/python/bin/python3
 import subprocess
 
-def get_traceroute_result(url):
+def get_ping_result(url):
     LIST=[]
 
     try:
-         check_stdout=subprocess.run(['/usr/bin/traceroute', url],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+         check_stdout=subprocess.run(['ping','-c','20',url],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
          if check_stdout.stderr:
              return LIST
     

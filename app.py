@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request
 from check_domain_result import compute 
 from check_traceroute import get_traceroute_result 
+from check_mtr import get_mtr_result 
+from check_ping import get_ping_result 
 from waitress import serve
 
 app = Flask(__name__)
@@ -35,8 +37,10 @@ def traceroute():
             return render_template('traceroute.html')
         else:
 
-            result=get_traceroute_result(name)
-            return render_template('show_traceroute_result.html',url=name,result=result)
+            traceroute_result=get_traceroute_result(name)
+            mtr_result=get_mtr_result(name)
+            ping_result=get_ping_result(name)
+            return render_template('show_traceroute_result.html',url=name,traceroute_result=traceroute_result,mtr_result=mtr_result,ping_result=ping_result)
 
 
 

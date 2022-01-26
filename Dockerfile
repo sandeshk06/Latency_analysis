@@ -1,6 +1,6 @@
 FROM alpine:latest
 LABEL maintainer="sandeshkulkarni1991@gmail.com"
-RUN apk add --update python3 py3-pip python3-dev
+RUN apk add --update python3 py3-pip python3-dev tcptraceroute mtr iputils 
 RUN apk add --no-cache libcurl
 ENV PYCURL_SSL_LIBRARY=openssl
 RUN apk add --no-cache --virtual .build-dependencies build-base curl-dev \
@@ -8,6 +8,9 @@ RUN apk add --no-cache --virtual .build-dependencies build-base curl-dev \
     && apk del .build-dependencies
 RUN pip3 install flask waitress ipaddress pycurl
 COPY check_domain_result.py   /usr/local/src/DOMAIN_LATENCY/
+COPY check_traceroute.py   /usr/local/src/DOMAIN_LATENCY/
+COPY check_mtr.py   /usr/local/src/DOMAIN_LATENCY/
+COPY check_ping.py   /usr/local/src/DOMAIN_LATENCY/
 COPY app.py   /usr/local/src/DOMAIN_LATENCY/
 COPY templates   /usr/local/src/DOMAIN_LATENCY/templates/
 COPY static   /usr/local/src/DOMAIN_LATENCY/static/
