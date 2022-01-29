@@ -4,6 +4,7 @@ from check_traceroute import get_traceroute_result
 from check_mtr import get_mtr_result 
 from check_ping import get_ping_result 
 from geo_latency_info import *
+import folium
 from waitress import serve
 
 app = Flask(__name__)
@@ -53,8 +54,11 @@ def traceroute():
                 for hop,cordinate in sorted(TRACES.items()):
                     Cordinate_list.append(cordinate)
 
-            
-
+            coordinates =[Cordinate_list]
+            m = folium.Map(location=SOURCE_LOCATION, zoom_start=4)
+            my_PolyLine=folium.PolyLine(locations=coordinates,weight=5)
+            m.add_child(my_PolyLine)
+            m.save('templates/geo_trace.html')
 
             return render_template('show_traceroute_result.html',url=name,traceroute_result=traceroute_result,mtr_result=mtr_result,ping_result=ping_result)
 
@@ -62,7 +66,9 @@ def traceroute():
 
     return render_template('traceroute.html')
 
-
+@app.route('/map')
+def map():
+    return render_template('geo_trace.html')
 
 if __name__=='__main__':
     serve(app,port=5000,threads=100)
