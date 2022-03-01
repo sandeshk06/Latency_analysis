@@ -50,6 +50,7 @@
 <!-- html snippet for form --!>
 <div>
 <form method=post>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
   <div class="form-group">
     <label >IP Address / Name</label>
     <input type="text" class="form-control" placeholder="IP Address or Domain Name" name="name" required>

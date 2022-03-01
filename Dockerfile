@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual .build-dependencies build-base curl-dev \
     && apk del .build-dependencies
 RUN pip3 install --upgrade pip
 RUN apk add make automake gcc g++ subversion
-RUN pip3 install flask waitress ipaddress pycurl folium requests scapy
+RUN pip3 install flask waitress ipaddress pycurl folium requests scapy flask_wtf
 COPY check_domain_result.py   /usr/local/src/DOMAIN_LATENCY/
 COPY check_traceroute.py   /usr/local/src/DOMAIN_LATENCY/
 COPY check_mtr.py   /usr/local/src/DOMAIN_LATENCY/

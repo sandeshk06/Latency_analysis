@@ -1,4 +1,5 @@
 from flask import Flask,render_template,request
+from flask_wtf.csrf import CSRFProtect
 from check_domain_result import compute
 from check_traceroute import get_traceroute_result
 from check_mtr import get_mtr_result
@@ -8,10 +9,16 @@ import folium
 import os
 import logging
 from waitress import serve
+
+
 logging.basicConfig(filename="/var/log/latency_app.log",level = logging.INFO,format = '%(levelname)s %(asctime)s %(message)s',datefmt = '%Y-%m-%d %H:%M:%S',filemode = 'a')
 logger = logging.getLogger()
 
+secret_key=os.urandom(12)
+
 app = Flask(__name__)
+app.config['SECRET_KEY']=secret_key
+csrf = CSRFProtect(app)
 
 @app.route('/',methods=['GET'])
 def home():
