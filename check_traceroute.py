@@ -1,11 +1,12 @@
 #!/opt/python/bin/python3
 import subprocess
+import logging
 
 def get_traceroute_result(url):
     LIST=[]
 
     try:
-         check_stdout=subprocess.run(['/usr/bin/traceroute', url],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+         check_stdout=subprocess.run(['timeout','30','/usr/bin/traceroute','-m','20', url],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
          if check_stdout.stderr:
              return LIST
     
@@ -17,5 +18,5 @@ def get_traceroute_result(url):
              return LIST
     
     except Exception as e:
-        print(e)            
+        logging.error("error while performing traceroute for given site:{}".format(e))            
         return LIST

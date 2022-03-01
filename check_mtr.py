@@ -1,5 +1,6 @@
 #!/opt/python/bin/python3
 import subprocess
+import logging
 
 def get_mtr_result(url):
     LIST=[]
@@ -17,5 +18,5 @@ def get_mtr_result(url):
              return LIST
     
     except Exception as e:
-        print(e)            
+        logging.error("Error while calculating MTR:{}".format(e))            
         return LIST

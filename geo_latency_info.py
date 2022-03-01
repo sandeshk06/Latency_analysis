@@ -2,7 +2,7 @@
 from scapy.all import *
 import requests
 import ipaddress
-
+import logging
 
 class GeoTrace:
     
@@ -70,10 +70,10 @@ class GeoTrace:
         HOP_WISE_RESULT={}
         try:
         
+            SOURCE_IP=self.find_source_public_ip()        
             ans,unans=traceroute(target=[self.site],maxttl=30,verbose=0)
 
              
-            SOURCE_IP=self.find_source_public_ip()        
             if ans.get_trace():
                 for key,value in ans.get_trace().items():
                     for hop,ip in value.items():
@@ -88,7 +88,7 @@ class GeoTrace:
             return SOURCE_IP,GEO_LOCATION
    
         except Exception as e:
-            print(e)
+            logging.error("error while performing geo trace:{}".format(e))
             return SOURCE_IP,GEO_LOCATION
 
     
