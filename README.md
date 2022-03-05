@@ -28,4 +28,4 @@ It will gives us following result
     
 ### Installation
 
-pip3 install waitress flask_wtf flask
+pip3 install waitress flask_wtf flask pycurl
