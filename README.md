@@ -29,3 +29,36 @@ It will gives us following result
 ### Installation
 
 pip3 install waitress flask_wtf flask pycurl
+
+### How TO run :
+
+git clone https://github.com/sandeshk06/Latency_analysis.git
+cd Latency_analysis
+nohup python3 dns_app.py &
+
+### Using Docker
+
+git clone https://github.com/sandeshk06/Latency_analysis.git
+cd Latency_analysis
+docker build . -t domain_latency
+docker run -d --name latency_audit -p 5000:5000 domain_latency
+
+## Using Docker-compose
+
+git clone https://github.com/sandeshk06/Latency_analysis.git
+cd Latency_analysis
+docker-compose up -d
+
+## Veryfy
+
+Verify:
+
+docker-compose ps >> check for container is running or not
+Go to Browser and type : http://127.0.0.1:5000
+
+
+
+
+
+
+
