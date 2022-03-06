@@ -36,6 +36,14 @@ pip3 install waitress flask_wtf flask pycurl
 
     cd Latency_analysis
 
+![Screenshot_2022-03-06 Home(1)](https://user-images.githubusercontent.com/16614184/156911465-02040ed7-c586-47d8-b81a-fcbfeeb2a4f3.png)
+
+
+### Latency audit result
+
+![Screenshot_2022-03-06 Home(2)](https://user-images.githubusercontent.com/16614184/156911489-0aaa104c-4d59-4056-b2fd-2b44ecbba3f1.png)
+
+
     nohup python3 dns_app.py &
 
 ### Using Docker
