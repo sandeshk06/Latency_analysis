@@ -72,7 +72,7 @@ pip3 install waitress flask_wtf flask pycurl
 ![Screenshot_2022-03-06 Home(2)](https://user-images.githubusercontent.com/16614184/156911489-0aaa104c-4d59-4056-b2fd-2b44ecbba3f1.png)
 
 ### Traceroute result
-![Screenshot_2022-03-06 Home(4)](https://user-images.githubusercontent.com/16614184/156911573-8cf28a0f-ba18-430b-8c9c-439836fbe159.png)
+![Screenshot_2022-03-06 Home(6)](https://user-images.githubusercontent.com/16614184/156911705-06ea4378-8276-4e2e-b21e-072fd3d46b3d.png)
 ![Screenshot_2022-03-06 Home(5)](https://user-images.githubusercontent.com/16614184/156911575-bf31c141-e5b5-4822-afd8-3da77bc2bf06.png)
 
 ### Geo Tracing result
