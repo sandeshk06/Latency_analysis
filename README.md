@@ -36,14 +36,6 @@ pip3 install waitress flask_wtf flask pycurl
 
     cd Latency_analysis
 
-![Screenshot_2022-03-06 Home(1)](https://user-images.githubusercontent.com/16614184/156911465-02040ed7-c586-47d8-b81a-fcbfeeb2a4f3.png)
-
-
-### Latency audit result
-
-![Screenshot_2022-03-06 Home(2)](https://user-images.githubusercontent.com/16614184/156911489-0aaa104c-4d59-4056-b2fd-2b44ecbba3f1.png)
-
-
     nohup python3 dns_app.py &
 
 ### Using Docker
@@ -70,6 +62,28 @@ pip3 install waitress flask_wtf flask pycurl
     docker-compose ps >> check for container is running or not
 
     Go to Browser and type : http://127.0.0.1:5000
+    
+
+![Screenshot_2022-03-06 Home(1)](https://user-images.githubusercontent.com/16614184/156911465-02040ed7-c586-47d8-b81a-fcbfeeb2a4f3.png)
+
+
+### Latency audit result
+
+![Screenshot_2022-03-06 Home(2)](https://user-images.githubusercontent.com/16614184/156911489-0aaa104c-4d59-4056-b2fd-2b44ecbba3f1.png)
+
+### Traceroute result
+![Screenshot_2022-03-06 Home(4)](https://user-images.githubusercontent.com/16614184/156911573-8cf28a0f-ba18-430b-8c9c-439836fbe159.png)
+![Screenshot_2022-03-06 Home(5)](https://user-images.githubusercontent.com/16614184/156911575-bf31c141-e5b5-4822-afd8-3da77bc2bf06.png)
+
+### Geo Tracing result
+![Screenshot_2022-03-06 Home(3)](https://user-images.githubusercontent.com/16614184/156911593-72cbbc10-6e0b-4ebd-9dad-dff629ce7456.png)
+![Screenshot_2022-03-06 Screenshot](https://user-images.githubusercontent.com/16614184/156911613-5f797312-3890-4c17-b3fc-124cc61ae409.png)
+
+
+
+
+
+
 
 
 
