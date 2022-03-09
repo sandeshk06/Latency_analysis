@@ -10,7 +10,7 @@ It will gives us following result
 - MTR (Multi trace route)
 - Traceroute 
 - Geo path tracing for given domain
-- Latency RTT (lookup time, connect time, pretransfer, transfer time, total time to connect domains)
+- Latency RTT (lookup time, connect time, pretransfer, starttransfer time, total time to connect domains)
 
 ### Prerequisites:
 
