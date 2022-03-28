@@ -25,6 +25,7 @@ It will gives us following result
     flask_wtf
     flask
     pycurl
+    folium
     
 ### Installation
 
